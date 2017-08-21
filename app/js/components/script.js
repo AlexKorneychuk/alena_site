@@ -10,6 +10,8 @@
 // });
 
 $(window).load(function(){
+
+
     $('.slider').fractionSlider({
 
         'slideTransition' : 'none', // default slide transition
@@ -57,4 +59,21 @@ $(window).load(function(){
 
 });
 
+$(document).ready(function () {
+
+    $('.arrow').on("click", "a", function (e) {
+        //отменяем стандартную обработку нажатия по ссылке
+        e.preventDefault();
+
+        //забираем идентификатор бока с атрибута href
+        let id = $(this).attr('href'),
+
+            //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top;
+
+        //анимируем переход на расстояние - top за 1500 мс
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+
+});
 
