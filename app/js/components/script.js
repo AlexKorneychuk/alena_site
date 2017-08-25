@@ -19,7 +19,7 @@ $(window).load(function(){
         'slideEndAnimation' : true, // if set true, objects will transition out before next slide moves in
         'position' : '0,0', // default position | should never be used
         'transitionIn' : 'left', // default in - transition
-        'transitionOut' : 'fade', // default out - transition
+        'transitionOut': 'left', // default out - transition
         'fullWidth' : true, // transition over the full width of the window
         'delay' : 0, // default delay for elements
         'timeout' : 2000, // default timeout before switching slides
