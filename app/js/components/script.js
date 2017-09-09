@@ -61,19 +61,49 @@ $(window).load(function(){
 
 $(document).ready(function () {
 
-    $('.arrow').on("click", "a", function (e) {
-        //отменяем стандартную обработку нажатия по ссылке
-        e.preventDefault();
 
-        //забираем идентификатор бока с атрибута href
-        let id = $(this).attr('href'),
-
-            //узнаем высоту от начала страницы до блока на который ссылается якорь
-            top = $(id).offset().top;
-
-        //анимируем переход на расстояние - top за 1500 мс
-        $('body,html').animate({scrollTop: top}, 1500);
+    $(document).on('click', '.arrow', function () {
+        $('html, body').animate({scrollTop: $('a[name="' + this.hash.slice(1) + '"]').offset().top}, 1000);
+        return false;
     });
+
 
 });
 
+$(function () {
+
+//Настраиваем instafeed
+    let foundImages = 0;
+    let maxImages = 8;
+    let feed = new Instafeed({
+
+        get: 'user',
+        userId: '1258860011',
+        accessToken: '1258860011.1677ed0.3ffd7ed42db7450486db0d330afb5fbf',
+        target: 'instafeed',
+        links: true,
+
+        sortBy: 'most-recent',
+        resolution: 'low_resolution',
+        template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"><div class="photo-box"><div class="image-wrap">' +
+        '<a href="{{link}}"><img src="{{image}}"></a><div class="likes">{{likes}} Likes</div></div><div class="description">' +
+        '{{caption}}<div class="date">{{model.date}}</div></div></div></div>',
+
+        // ... other settings
+        limit: 60,
+        success: function () {
+            foundImages = 0;
+        },
+        filter: function (image) {
+            if (image.tags.indexOf('бровиоболонь') >= 0 && foundImages < maxImages) {
+                foundImages = foundImages + 1;
+                return true;
+            }
+            return false;
+        },
+
+
+    });
+    feed.run();
+
+});
