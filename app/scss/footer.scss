@@ -1,0 +1,15 @@
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 10rem;
+  & > a {
+    transition: all ease .5s;
+    width: 30%;
+    color: #555555;
+    &:hover {
+      transition: all ease .5s;
+      color: #c0c0c0;
+    }
+  }
+}
