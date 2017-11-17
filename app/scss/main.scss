@@ -33,10 +33,13 @@
 }
 
 .services {
+  position: relative;
+
   padding-bottom: 50px;
   text-align: center;
   margin: 30px auto auto auto;
   background-color: #edefef;
+
   &-heading {
     font-weight: bold;
     text-transform: uppercase;

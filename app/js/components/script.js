@@ -16,7 +16,7 @@ $(window).load(function(){
 
         'slideTransition' : 'none', // default slide transition
         'slideTransitionSpeed' : 2000, // default slide transition time
-        'slideEndAnimation' : true, // if set true, objects will transition out before next slide moves in
+        'slideEndAnimation': false, // if set true, objects will transition out before next slide moves in
         'position' : '0,0', // default position | should never be used
         'transitionIn' : 'left', // default in - transition
         'transitionOut': 'left', // default out - transition
@@ -40,7 +40,7 @@ $(window).load(function(){
         'backgroundSpeed' : 2500, // default background animation speed
         'backgroundEase' : 'easeOutCubic', // default background animation easing
 
-        'responsive' : true, // responsive slider (see below for some implementation tipps)
+        'responsive': true, // responsive slider (see below for some implementation tips)
         'increase' : false, // if set, slider is allowed to get bigger than basic dimensions
         'dimensions' : '1400, 400',
         /* IMPORTANT:

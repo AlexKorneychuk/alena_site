@@ -4,3 +4,16 @@
   top: 22px;
   outline: none;
 }
+
+.prices {
+  margin-left: 5rem;
+  font-size: 1.5rem;
+  font-family: droid_sans, Arial, Sans-Serif;
+
+}
+
+@media screen and (min-width: 480px) {
+  .hamburger-position {
+    top: 30px;
+  }
+}
